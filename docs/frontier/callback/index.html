@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EDEC Frontier Login</title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: #0e1218;
+      color: #e7edf7;
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    main {
+      max-width: 560px;
+      padding: 32px;
+      text-align: center;
+    }
+
+    a {
+      color: #ff8a2a;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>EDEC</h1>
+    <p>Wracam do aplikacji. Jeśli nic się nie stanie, upewnij się, że EDEC jest uruchomiony i kliknij link poniżej.</p>
+    <p><a id="return-link" href="#">Wróć do EDEC</a></p>
+  </main>
+
+  <script>
+    const localCallback = "http://127.0.0.1:17737/frontier/callback/" + window.location.search;
+    const link = document.getElementById("return-link");
+
+    link.href = localCallback;
+    window.location.replace(localCallback);
+  </script>
+</body>
+</html>
